@@ -1,13 +1,12 @@
 'use strict';
-
+var array = [];
 function double_to_one(collection) {
-  var array = [];
   for(var i = 0; i < collection.length; i++){
-    if(isArray(collection[i])){
-      double_to_one(collection[i]);
+    if(typeof (collection[i]) === 'number'){
+      array.push(collection[i]);
     }
     else {
-      array.push(collection[i]);
+      double_to_one(collection[i]);
     }
   }
   return array;
