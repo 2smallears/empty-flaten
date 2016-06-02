@@ -1,16 +1,14 @@
 'use strict';
-
+var array = [];
 function double_to_one(collection) {
-  var array = [];
   for(var i = 0; i < collection.length; i++){
-    if(isArray(collection[i])){
-      double_to_one(collection[i]);
+    if(typeof (collection[i]) === 'number'){
+      if(!isExist(collection[i], array)){
+        array.push(collection[i]);
+      }
     }
     else {
-      if(isExist(collection[i], array)){
-        continue;
-      }
-      array.push(collection[i]);
+      double_to_one(collection[i]);
     }
   }
   return array;
