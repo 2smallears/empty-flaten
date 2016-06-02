@@ -6,8 +6,7 @@ function double_to_one(collection) {
       if(!isExist(collection[i], array)){
         array.push(collection[i]);
       }
-    }
-    else {
+    }else {
       double_to_one(collection[i]);
     }
   }
